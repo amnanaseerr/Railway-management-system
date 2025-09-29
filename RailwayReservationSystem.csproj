@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69B26A59-A82F-4518-BD67-943BB60801D0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RailwayReservationSystem</RootNamespace>
+    <AssemblyName>RailwayReservationSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.9.0\lib\net462\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="DeleteTrainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeleteTrainControl.Designer.cs">
+      <DependentUpon>DeleteTrainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeleteUserControl.Designer.cs">
+      <DependentUpon>DeleteUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_AddTrain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_AddTrain.Designer.cs">
+      <DependentUpon>UC_AddTrain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BookTrain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_BookTrain.Designer.cs">
+      <DependentUpon>UC_BookTrain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_CancelTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_CancelTicket.Designer.cs">
+      <DependentUpon>UC_CancelTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_SearchTrains.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_SearchTrains.Designer.cs">
+      <DependentUpon>UC_SearchTrains.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ViewReservations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ViewReservations.Designer.cs">
+      <DependentUpon>UC_ViewReservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ViewTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ViewTicket.Designer.cs">
+      <DependentUpon>UC_ViewTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ViewTrains.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ViewTrains.Designer.cs">
+      <DependentUpon>UC_ViewTrains.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserDashboard.Designer.cs">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUsersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewUsersControl.Designer.cs">
+      <DependentUpon>ViewUsersControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteTrainControl.resx">
+      <DependentUpon>DeleteTrainControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteUserControl.resx">
+      <DependentUpon>DeleteUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_AddTrain.resx">
+      <DependentUpon>UC_AddTrain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_BookTrain.resx">
+      <DependentUpon>UC_BookTrain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_CancelTicket.resx">
+      <DependentUpon>UC_CancelTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_SearchTrains.resx">
+      <DependentUpon>UC_SearchTrains.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ViewReservations.resx">
+      <DependentUpon>UC_ViewReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ViewTicket.resx">
+      <DependentUpon>UC_ViewTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ViewTrains.resx">
+      <DependentUpon>UC_ViewTrains.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserDashboard.resx">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewUsersControl.resx">
+      <DependentUpon>ViewUsersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pics\Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pics\train.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
